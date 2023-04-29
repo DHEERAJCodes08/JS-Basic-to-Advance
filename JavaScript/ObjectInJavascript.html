@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <h1>Feel</h1>
+ 
+ 
+
+
+ <script>
+    // in this Javacript Program  we will Discuss All about the Objects 
+    
+
+
+    //Example of the Object
+
+    /* let friends={
+        names: "Dheeraj",
+        total: 3,
+        dept:"Computer Science",
+        year: "Second Year",
+    
+    }
+
+    console.log(friends); */
+
+
+
+
+
+
+  let lecture=10;
+  let section=3;
+  let title = "Javascript";
+/* 
+  const course = {            //Starting of the Object
+  lecture:10,
+  section:3,
+  title : "Javascript",
+
+//This is the Sub object ie present in the Main Object;
+
+  notes :{
+    introduction:"Welcom to the Javascript Course",
+
+  },
+
+  //We can Also Declare here Functions inSide the Main Object !
+
+  enrol(){
+    console.log('you are Succesfully enroled');
+
+  } 
+
+  }
+
+  
+
+
+  course.enrol()
+  console.log(course) 
+
+
+
+  //Here we can Call new property while run time because it is dynamic in nature
+
+  course.price = 999;
+
+
+ 
+*/
+
+
+
+
+  //Factory Function !
+/* 
+  function createCourse( title){        //here for naming the Fuinction we use Camel case 
+            
+  return  {            //Starting of the Object
+  lecture:10,
+  section:3,
+  title : title,
+
+
+
+  notes :{
+    introduction:"Welcom to the Javascript Course",
+
+  },
+
+  enrol(){
+    console.log('you are Succesfully enroled');
+
+  }
+
+  }
+  
+
+}
+
+console.log(createCourse("Javascript"))
+ */
+
+
+
+
+
+
+//Contructor Function
+
+/* function Course(title){                              //here for naming the function we use Pascal case 
+     this.title=title,
+     this.enrol=function(){
+        console.log('you are Succesfully enroled');
+     }
+}
+
+const course= new Course('javascript');
+course.enrol();
+ */
+
+
+
+
+ // Now When we want to Delet any property from object at run time we use !
+
+ function Course(title){                              //here for naming the function we use Pascal case 
+     this.title=title,
+     this.enrol=function(){
+        console.log('you are Succesfully enroled');
+     }
+}
+
+const course= new Course('javascript');
+course.enrol();
+
+//to delete title we use
+delete course.title;
+
+
+//to see 
+console.log(course)
+
+
+//to make new Function 
+course.checkfun = function(){
+    console.log('Welcome to the GAme');
+}
+//to see
+console.log(course.checkfun())
+
+
+
+
+
+
+ </script>
+</body>
+</html>

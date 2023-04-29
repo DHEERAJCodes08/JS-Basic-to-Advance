@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        //We Are Discusing About the  Classes 
+
+        //Syntax of Creating an  class
+
+
+/* 
+        class Data {
+            constructor(itemname,price,discount,itemcode){
+                this.item=itemname;
+                this.price=price;
+                this.discount=discount;
+                this.itemcode=itemcode;
+            }
+        }
+
+        let Pencil=new Data('pencil',20,2,'kj5');  //this is the object of the Class Data
+
+
+
+
+
+        //Creating object using class Expression
+
+
+        const Product1= class Data2{
+            constructor(itemname,price,discount,itemcode){
+                this.item=itemname;
+                this.price=price;
+                this.discount=discount;
+                this.itemcode=itemcode;
+
+                //now using getter and setter method
+            }
+            get getDiscountvalue(){       //this is used to give the Value
+                    return this.discount;
+                }
+
+            set setDiscountvalue(value){ // this is used omset the value
+                this.discount=value;
+            }
+
+            //we can also find its discount Value 
+
+            discountValue(){
+                return this.price * this.discount/100;
+            }
+        }
+
+        let chair= new Product1('Chair',1234,22,'HG87')
+
+ */
+
+
+
+
+
+ //Now we are going to make the Expanding of the Class 
+  //firstly we create an class
+
+  class Product1{
+    constructor(itemname){     //super functions calls this 
+        this.item=itemname;
+    }
+    getitemValue(){
+        return this.item + " is an product ";
+    }
+
+  }
+
+  class Furniture extends Product1{
+    constructor(itemname){
+     super(itemname);   //it call the constructor of the parrent class
+     }
+
+     getitemValue(){
+        return this.item + " is an Furniture";
+     }
+  }
+
+  let pencil = new Product1('Pencil');      //these are the object for the classes 
+  let chair = new Furniture('chair');
+
+    </script>
+</body>
+</html>

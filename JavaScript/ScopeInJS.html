@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Hello guys welcome to the coding Paradise</h1>
+
+
+
+     <script>
+
+    // in this program we are going to learn about the  diffferent types of the  Scopes 
+
+       
+/*            var name  = 'Dheeraj';
+        
+           function scriptayname(){
+            var marks = 10;
+            console.log(name);
+           }
+
+           scriptayname()
+           console.log(marks); */
+
+
+
+           var x= 0;
+
+
+           // 1> Global Variables
+
+           function FirstName(){
+           // Local Variables
+            var x=1;
+            console.log(x);
+
+            function ClidofFirst(){   //since this function iis created inside of the first fun() ie  it can access the properties of its parent function
+            
+                console.log(x);
+            }
+                   ClidofFirst();
+        }
+        
+
+        FirstName();
+
+
+          
+        //here we are again going to give the inner function an new variable and then check the output
+
+        
+        function First(){
+        
+        var x=1;
+        console.log(x);
+
+        function Child(){   //since this function iis created inside of the first fun() ie  it can access the properties of its parent function
+            var x=2;
+            console.log(x);
+        }
+               Child();
+    }
+    
+
+    First();
+
+
+    // Now when we call the second function it gives 0 as the Global variable  at the top of the is given as x = 0; 
+
+    function second(){
+    console.log(x);
+    }
+
+
+    second();
+
+
+
+    //Block Scope Example
+
+    //it gets only used for the let and const  it dose not works in var
+    
+    var x=10
+    {
+        var x=1;
+        console.log(x);
+    }
+
+    console.log(x);
+
+
+
+
+    if (true){
+        let foo ='bar';     // it gives an error because in block we always use the let or the const  keywoard
+
+    }
+
+    console.log (foo);      // therefore it cannot access the let keywoard and gives the error
+    
+
+    //but if we use here the var keywoard then it can access 
+
+
+
+    
+    
+    if (true){
+        var  foo ='bar';     
+    }
+
+    console.log (foo);      
+
+
+
+
+    // 4> Lexical scope 
+
+
+    //its just like tthe Inheretance 
+
+    function Dada (){
+        var name = 'Jogendra Prasad';
+
+        function Papa (){
+            console.log(name);
+            console.log(likes);    // here the property  of the child is not accessable by the parent BUT the properties of the parent can be  accessed by its child functions 
+            //name is accessible here 
+
+            function Beta (){
+                //innermost level of tthe scope chain 
+                //name is also accessable here 
+                var likes ='coding ';
+            }
+            Beta();
+
+     
+        }
+        Papa();
+    }
+    Dada();    
+    
+
+
+
+
+
+
+           
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </script>
+</body>
+</html>
+

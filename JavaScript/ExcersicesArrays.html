@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Hello</h1>
+
+
+  <script>
+     let characters=[
+        {
+            name:'Dheeraj',
+            height:'175',
+            eyecolor: 'Black',
+            mass:'75',
+            gender:'Male'
+        },
+        {
+            name:'Saurab',
+            height:'155',
+            eyecolor: 'green',
+            mass:'55',
+            gender:'Male'
+        },
+        {
+            name:' Priya',
+            height:'145',
+            eyecolor: 'white',
+            mass:'85',
+            gender:'Female'
+        },
+        {
+            name:' Ankita',
+            height:'154',
+            eyecolor: 'blue',
+            mass:'45',
+            gender:'Female'
+        },
+        {
+            name:'Sanket',
+            height:'165',
+            eyecolor: 'grey',
+            mass:'95',
+            gender:'Male'
+        }
+     ]
+
+    // 1> GET AN ARRAY OF ALL NAMES ??
+       
+        //so we will be using map bcz it only provides the co llection of arrays what we ask 
+     
+        const names = characters.map(person => person.name)
+        console.log(names)
+
+
+    // 2> Get the array of objects with  just name and height properties
+        
+       //since here we needed to fetch two prperties so we ued multi line codes
+
+       const propch = characters.map(person => {
+        return {
+            name :person.name,
+            height:person.height,
+        }
+       })
+
+       console.log(propch)
+
+
+    // 3> Get the total height of all the Characters
+
+       const totalHeight = characters.reduce((prevHeight, characters) => {
+        return prevHeight + Number(characters.height)      //since these are the Characters we need to convert them into numbers
+       },0)   //here prevHeight is 0
+
+       console.log(totalHeight)
+
+    
+
+    // 4> Get charecters with mass greater than 70
+
+
+      const greater = characters.filter(person => {
+        return person.mass > 70 
+      })
+    
+      console.log(greater)
+
+
+    // 5> Get all   male Characters
+    
+      const OnlyMale = characters.filter(person => {
+        return person.gender === 'Male'
+      })
+
+      console.log(OnlyMale)
+
+
+
+    // 6> Sort by gender 
+
+      const SortGen = characters.sort((character1, character2) => {
+        if(character1.gender < character2.gender){
+            return -1;
+        }
+        
+        if( character1.gender >character2.gender){
+            return 1;
+        }
+
+        
+      });
+
+      console.log(SortGen);   //So here it sorts by gender wherer it keeps first all the female s and then all the males
+    
+
+    // 7> Sort by name
+
+      const SortName = characters.sort((character1, character2) => {
+        if(character1.name < character2.name){
+            return -1;
+        }
+
+        if(character1.name > character2.name){
+            return -1;
+        }
+      })
+
+      console.log(SortName);   //So here it sorts by name   wherer it keeps first   all the Names of the Boys and then all thenames of the girls
+
+
+
+
+    // 8> Does every character have mass greater than 40      //It gives the out put in the order of true or false
+
+
+      console.log(characters.every(person => person.mass > 40))   //it gives the true because all the characters have mass greater than 40
+
+
+    // 9> Does every character have blue  eyes or not
+
+    console.log(characters.every(person => person.eyecolor == 'blue'))    //it gives the false because all the characters  do not have eyes equal to blue !
+         
+   // 10> is there atleast  one male character
+
+   console.log(characters.some(person => person.height  < 200))  //it gives true because all the characters have height less than 200
+
+
+   
+
+     
+
+      
+    
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+</body>
+</html>

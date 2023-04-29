@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+
+        //how to create an array 
+
+/*         const dheeraj =[1,2,3,4,5,6,7,8,9];
+        console.log(dheeraj)      //by these we can access
+
+        console.log(dheeraj[dheeraj.length-1])           //here it gives the length of array
+        console.log(dheeraj[4])
+ */
+
+
+        //here array can also be declared using objects by
+         
+        const num = new Array(9,8,7,6,5,4,3,2,1);
+        console.log(num);
+        //now to find the length of arrray
+  
+
+
+        //operations in the Arrays
+        // 1> Push Operation
+
+        //num.push(10);
+        console.log(num.push(0))
+
+
+
+        // 2> Unshift Operation
+
+
+        //num.unshift(0)
+        console.log(num.unshift(10))
+
+
+        // 3> POP Operation
+
+        //num.pop()
+        console.log(num.pop())    //it pops the last element
+
+
+
+        // 4> Shift Operation 
+
+        //num.shift();
+        console.log(num.shift())
+
+
+        // 5> If we want to change the index value we use 
+
+        num[1]= "amit"    //here it changes the value that is  present in the index  to the value we provide here we can  give value of any data type 
+        num[3]= 23                  //ie it Acts as dynamically 
+
+         
+
+        const name= ["Dheeraj", "Sanket", "Amit","Suhas", "Nitu","Suhas","Dheeraj"];
+        console.log(name)
+
+
+        //name.indexOf('Dheeraj')  //it gives the index of the first Occurance
+        console.log(name.indexOf('Dheeraj')) 
+        console.log(name.indexOf('Dheeraj',1))  
+
+        //name.lastIndexOf('Suhas') 
+        console.log(name.lastIndexOf('Suhas'))   // it gives the Last Occurance of the name
+
+        console.log(name.includes('Amit')) //Gives true when the Elements are Present in the Array or Not !
+        console.log(name.includes('Sanket',2))  //bcz after the index 2 there is no sanket name present 
+
+
+
+        //Now to apply find() , find function are generally used to find the object 
+        //so now lets create an array containing objects
+
+        let channels = [{
+            name:'Dheeraj',
+            subscriber:1000
+        },{
+            name:'Sameer',
+            subscriber:2000  
+        },{
+            name:'Shweta',
+            subscriber:3000
+        }];
+
+        console.log(channels.find(function(element){
+            //return element.subscriber === 3000
+            return element.name === 'Sameer'            // so here we are able to find the object by the use of find fun !
+
+        }))
+
+
+        //it can also be done by using arrow  function 
+
+        console.log(channels.find(element => element.name === 'Dheeraj'))
+        
+
+        //Now How we Can  Add and Split the  Arrays in the JS 
+
+        //to Add we use Concat()
+        let names1 = ['amit','Sudhir','Sanket',"Smart"];
+        let names2 = ['Dheeraj','Madhur','Priya',"Sutish"];
+
+        console.log(names1.concat(names2));
+        console.log(names1.concat('Mummy'))
+
+        // We can also Solve theses by using the Spread Operater its used as (...name)
+
+        names4 =[...names1,...names2]; 
+        console.log("this is spread op " + names4)   // here it adds the two arrays 
+
+        //Now to split the Array we use the Slice()
+
+        names3 = names1.concat(names2);
+        console.log(names3)
+        console.log(names3.slice(3,5))   //so it give the element that is present in the location 3 and between 3 and 5 ! 
+
+
+
+        //now we are going to discus abouut the for loops in the Js
+
+        let names5=['Sanket','sameer','sakshi','himandshu']
+        for(let i=0;i<=names5.length; i++){
+            console.log(names5[i]);
+        }
+         
+        
+        //now we are  going to try the for of loop so lets ceheck it out
+
+        for(let name of  names5){                    //here names5 is an object and the nmae is  an variable that access the variables
+            console.log(name) 
+        }
+
+
+        // now we are going to check the foreach()
+
+        names5.forEach(function(name,index){   // this is call by function
+            console.log(name, index);
+
+        })
+        
+        //Join  used to join the elements in the array
+
+        let student= ['S','H','I','V','A'];
+
+        //console.log(student.join())
+        console.log(student.join('_'));
+        //console.log(student.join(''))
+        
+
+        //Split  used to split out the values
+
+        //console.log(student.split('_'));
+
+
+
+
+        //filter()
+
+        let cities= [
+            {name:'Mumbai', population:100000},
+            {name:'Delhi', population:7045600},
+            {name:'Bihar', population:7426700},
+            {name:'Kashmir', population:7541236},
+            {name:'Nanda', population:4497},
+            {name:'Assam', population:2000000},
+        ];
+
+
+        console.log(cities.filter(city => city.population > 300000))
+
+
+
+         //Map method     what ever the operation we perform it gives the value in the new array 
+
+        console.log(cities.map(city => city.population * 2))
+
+
+
+
+
+
+
+
+
+        
+    </Script>
+</body>
+</html>

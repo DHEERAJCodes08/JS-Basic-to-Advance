@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1</title>
+</head>
+<body id="body">
+    <h1>Welcome to Coding Paradise</h1>
+    <h2>Create List Elements</h2>
+
+
+    <!-- <button id="ClickBtn" onclick="alert('Hello, I am AI')">Click Me</button> -->
+    <button id="ClickBtn">Click Me</button>
+
+      
+    <script>
+        // This Program is to take the Values from the uaer and then show as the output in the form of List
+
+       /*  
+        const name = prompt("Enter your Firstname")
+        const age = prompt("Enter your Age")
+        const gender =prompt("Enter your Gender")
+
+        const newUl = document.createElement('ul')
+        body.append(newUl)        const newLia = document.createElement('li')
+        const newLib = document.createElement('li')
+        const newLic = document.createElement('li')
+        newUl.appendChild(newLia)
+        newUl.appendChild(newLib)
+        newUl.appendChild(newLic)
+
+        newLia.textContent = name
+        newLib.textContent = age 
+        newLic.textContent = gender  */
+
+
+        //We are going to study about the Events in the Js 
+
+        // 1> the First method we would be Directly  using it inside the Html Code
+
+        //Check out the Button tag we have  created for using first method 
+
+        
+        // 2> The Second method we would be Directly using here 
+
+        /* 
+          ClickBtn.onclick = function(){
+          alert('Hey how are you')
+
+        } */
+        
+
+       // 3> Method and Most Used 
+       function callme(){
+        console.log(this)  // the element by which we call the event gives here for ex here it returns button 
+        alert('Hey how are you')
+       }
+        //ClickBtn.onclick = callme      //1> time
+
+        // here we can call the addEventListener for multiple no of times
+        //it must be used by creating Different function
+
+         ClickBtn.addEventListener('click', callme)   //2> time
+
+         
+       /*  ClickBtn.addEventListener('click',function(){
+            alert('Thanks')
+        }) */   
+        
+        
+        //we have also an property to remove the addEventListener
+        
+        //ClickBtn.removeEventListener('click',callme)
+
+        
+
+        //Here we can also get the type of the Event and the current Targrt
+        function callme (event){
+            console.log(event.type),
+            console.log(event.currentTarget),
+            console.log(event.clientX)
+            console.log(event.clientY)
+
+        }
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        
+     const names =['dheeraj', 'sameert', 'madhur','piyush',' menakshi']
+
+     console.log(names)
+     console.log(names[2])
+     console.log(names.length)
+
+     names.push('preeti')
+     console.log(names)
+
+     names.pop()
+     console.log(names)
+
+     names.shift()
+     console.log(names)
+
+     names.unshift('manish')
+     console.log(names)
+
+
+
+
+
+     names[2]='manpreet'
+     console.log(names)
+
+     names[4]='suhas'
+     console.log(names)
+
+
+
+     const values =[20,30,40,50,60,70,80,90,100];
+
+     console.log(values)
+
+
+     //console.log(names.concat(values))
+
+
+     const Sum =names.concat(values);
+     console.log(Sum)
+
+
+     console.log(Sum.slice(4,10))
+     
+
+     console.log(Sum.indexOf('manpreet'))
+     console.log(Sum.lastIndexOf('suhas'))
+     
+     console.log(Sum.includes('piyush'))
+     console.log(Sum.includes(20))
+
+
+
+
+
+     const Comp = [{
+        name:'Dheeraj',
+        value : 20
+
+     },{
+        name:'Saurab',
+        value:10,
+     },{
+        name:'Sanket',
+        value:5,
+     },{
+        name:'madhur',
+        value:50,
+     },{
+        name:'Preeti',
+        value:30,
+     },{
+        name:'mahesh',
+        value:10,
+     }]
+
+     console.log(Comp)
+
+
+
+     console.log( Comp.find(function(element){
+        return element.name === 'Sanket';
+     }))
+
+
+
+     //or
+
+     console.log(Comp.filter(person => person.value > 15))
+
+     Comp.forEach(function(name,index){
+
+        console.log(name, index)
+        
+     });
+
+    
+    names5 =['S','H','I','V','A','M']
+     
+
+    console.log(names5.join('*'))
+    
+
+
+
+
+
+
+    let characters=[
+        {
+            name:'Dheeraj',
+            height:'175',
+            eyecolor: 'Black',
+            mass:'75',
+            gender:'Male'
+        },
+        {
+            name:'Saurab',
+            height:'155',
+            eyecolor: 'green',
+            mass:'55',
+            gender:'Male'
+        },
+        {
+            name:' Priya',
+            height:'145',
+            eyecolor: 'white',
+            mass:'85',
+            gender:'Female'
+        },
+        {
+            name:' Ankita',
+            height:'154',
+            eyecolor: 'blue',
+            mass:'45',
+            gender:'Female'
+        },
+        {
+            name:'Sanket',
+            height:'165',
+            eyecolor: 'grey',
+            mass:'95',
+            gender:'Male'
+        }
+     ]
+
+     console.log(characters)
+
+
+     console.log(characters.map(person => person.name))
+
+
+     console.log(characters.map(person => {
+      return {name:person.name,
+             height:person.height}
+     }))
+
+
+     const dheeraj=characters.reduce((person, character) => {
+      return person + Number(character.height)
+     },0)
+
+     console.log(dheeraj)
+
+
+     console.log(characters.filter(person => person.mass > 70))
+
+     console.log(characters.filter(person => person.gender === 'Male'))
+
+     const Soft = characters.sort((character1, character2) => {
+      if (character1.gender < character2.gender) {
+         return -1;
+     }
+      
+     if(character1.gender > character2.gender){
+         return 1;
+     }
+   });
+
+
+   console.log(Soft)
+
+
+
+   const Softxx = characters.sort((character1,character2) => {
+      if (character1.name > character2.name){
+         return -1;
+      }
+
+      if(character1.name < character2.name){
+         return 1;
+      }
+   })
+
+   console.log(Softxx)
+
+
+
+   animals = {
+      name:"Zebra",
+   }
+
+   console.log(animals)
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

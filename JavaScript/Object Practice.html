@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+     //This programs are based for objects exersice 
+
+     //create an object for an eccomerce website 
+     //item
+     //price
+     //discount 
+     //item code
+
+
+
+     const product = {
+        item:"coldrink",
+        price:50,
+        discount:20,
+        itemcode:'D8',
+     
+    
+     }
+
+     console.log(product)
+
+
+
+
+     //Now creating the same object through the factory function and constructor function
+
+     //Factory function
+     function product1(item ,price,discount, itemcode){
+
+        return {
+            item:item,
+            price:price,
+            discount:discount,
+            itemcode:itemcode,
+
+        }
+     }
+
+     console.log(product1('chips',20,5,'F8'))
+
+
+    //Constructor Function use pascal case
+
+    function Product2(name,price,discount,itemcode){
+        this.itemName=name;
+        this.price=price;
+        this.discount=discount;
+        this.itemcode=itemcode;
+        this.disvalue=function(){         //this is to find how much rupies the discount is 
+            return price * discount/100;
+        }
+    }
+
+    const mobile= new Product2('Nivya',1400,20,'GH45')
+    console.log(mobile)
+
+
+
+
+
+
+    </script>
+</body>
+</html>

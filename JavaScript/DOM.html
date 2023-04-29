@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body id="body">
+  
+    <ul id="element"  data ="me">  <!-- creating an user defined artribute ie data ="me" --> 
+        <li class="list">First Element</li>
+        <li>Second Element</li>
+        <li>Third Element</li>
+    </ul>
+ 
+    <table>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+            <td>Three</td>
+        </tr>
+        <tr>
+            <td>Four</td>
+            <td>Five</td>
+            <td>Six</td>
+        </tr>
+    </table>
+
+    <div id="FirstDiv">First div</div>
+    <script>
+        //to  see the root node
+
+          //console.log(document.documentElement)  //it gives the structure of our code \
+
+
+
+
+        //to access the head or body element
+
+          //console.log(document.head)
+          //console.log(document.body)
+
+
+
+        //Now to access the Childerns of the parent element
+
+          //console.log(document.body.childNodes)    //here it also counts the indent spacs as the text so to overcome this and to get only the elements we use childern insted of the childNodes !
+          //console.log(document.body.children)     //by using this we only get the elements 
+        
+
+          //we can also get the values form applying loop 
+        /*   for(node of document.body.children){
+            //console.log(node)
+        } */
+
+        /*   for(node of document.body.childNodes){
+            //console.log(node)
+        } */
+
+
+
+        // it can also be storeed in the Array
+          //const arr =Array.from(document.body.childNodes)
+          //console.log(arr)
+
+
+
+
+        //To find the First and Last elements
+
+          //console.log(document.body.firstChild)   //here it also counts the indent spacs as the text so to overcome this and to get only the elements we use firstElementChild insted of the FirstChild !
+          //console.log(document.body.lastChild)   //here it also counts the indent spacs as the text so to overcome this and to get only the elements we use LastElementChild insted of the lastChild !
+        
+          //console.log(document.body.firstElementChild)   //by using this we only get the elements 
+          //console.log(document.body.lastElementChild)   //by using this we only get the elements 
+    
+
+
+
+        //To fetch the Childerns Siblings
+
+         //const Ultag =document.body.children[0]
+         //console.log(Ultag)
+
+
+
+
+         //to fetch the next sibling
+
+         //const Ultag = document.body.children[0]
+         //console.log(Ultag)
+         //console.log(Ultag.nextElementSibling)
+
+
+         //const ulTag = document.body.children[0]
+         //const firstLi = ulTag.childern[0]
+         //const SecondLi = ulTag.childern[1]
+        
+         //console.log(ulTag.prevElementSibling.textContent);
+         //console.log(second)
+         //console.log(third) 0
+
+
+
+
+
+
+
+         // Now we will be Fetching the Element inside the Table 
+        
+         //const tableTag = document.body.children[1]
+          //console.log(tableTag)   //hence we have selected the Table here 
+         
+
+
+
+        // Now we will be Accessing its Childern ie the tabel rows
+        const tableTag = document.body.children[1]
+          console.log(tableTag.tBodies[0].rows[0].cells[0].textContent)
+          console.log(tableTag.tBodies[0].rows[0].cells[2].textContent)
+          console.log(tableTag.tBodies[0].rows[0].cells[2].style = "background-Color: blue")
+          console.log(tableTag.tBodies[0].rows[0].cells[0].style = "background-Color: orange")
+          console.log(tableTag.tBodies[0].rows[1].style = "background-Color: pink")
+
+
+         //Now we will fetch the childern using the Classes and the Id
+        
+
+         //Id search
+         //console.log(element.style.backgroundColor="red") 
+
+         const ulTag = document.getElementById("element")
+         ulTag.style.backgroundColor="yellow" 
+         console.log(ulTag)
+         
+
+
+
+         //Class Search
+          const listitem =document.getElementsByClassName("list")
+          console.log(listitem)
+
+
+
+          //Tag name
+          console.log(document.getElementsByTagName("table"))
+
+
+
+
+          //Query selector
+
+          const listitems =document.querySelectorAll(".list")   //to select using class
+          console.log(listitems)
+                                                                                                                                     
+          //const listitems1 =document.querySelectorAll("#element")
+         // console.log(listitems1)
+
+
+
+          const listitems1 =document.querySelectorAll('ul > li:last-Child')
+          console.log(listitems1[0].textContent)
+
+
+
+          const listitemss =document.querySelectorAll('ul > li:nth-Child(1)')  //here as we cahanges the values it brings the list elements
+          console.log(listitemss[0].textContent)   
+
+
+
+
+
+          //Accessing the Attributes
+
+          console.log(element.id)// it can get access bcz it is pre installed attribute
+          
+
+          // now accessing the attributes we created 
+          console.log(element.data)    // it can get access bcz it is user defined attribute
+ 
+
+          //to make it accessible we need to use the getAttribute method
+          console.log(element.getAttribute('data')) // it can get access  
+
+          //we can also set the attribute value by using the setAttribute method
+          console.log(element.setAttribute('order-placed' , 'pending'))
+          console.log(element.getAttribute('order-placed'))   // it can get access and gives the output as pending 
+ 
+         //there is also an HasAttribute to check weather the attributes is available or not
+         console.log(element.hasAttribute('order-placed'))   //it returns true
+
+
+         //to remove the attribute 
+         console.log(element.removeAttribute('order-placed'))
+         console.log(element.hasAttribute('order-placed'))  //now it returns the false as te attribute is deleted 
+
+         // to check all the attribute we us 
+         console.log(element.attributes)    //it returns all the attributes present in th element
+
+
+         //Creatuing and removing the element
+
+          // this element will be crreated inside the variable but it will not be included inside the DOM ie it will no be added in the HTML
+
+        const newDiv = document.createElement('div')
+        body.append(newDiv)             //here it creates the new element and adds it in the last as we use the append function to add 
+
+        //const newtext =document.createTextNode('Coading Paradise')
+
+               //or we can use this method
+
+               newDiv.textContent = "I AM DHEERAJ "
+
+        //newDiv.appendChild(newtext) 
+
+        //now using the prepend function
+        //body.prepend(newDiv)             // here it addes the element in the top as we use prerpend function to append
+
+        //body.before(newDiv)       // adds the element before the body element
+
+        //body.after(newDiv)        // adds the element after the body element
+
+        //we also use the replace function to replace the element with the new element
+        
+       // FirstDiv.replaceWith(newDiv)
+
+
+        // to remove this  element
+        FirstDiv.remove()
+
+
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
